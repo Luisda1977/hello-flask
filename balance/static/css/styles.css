@@ -41,5 +41,11 @@ table.paper {
 .pie_de_pagina {
     margin-top: 40px;
     padding: 20px;
-    border-top: #b8174c solid 1px;
+    border-top: solid 1px #b8174c;
+}
+
+.lista-vacia {
+   text-align: center;
+   padding: 20px;
+   color: #666666; 
 }

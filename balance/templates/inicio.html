@@ -24,7 +24,8 @@
             <th class="titulo-tabla">Tipo</th>
             <th class="titulo-tabla numero">Cantidad</th>
         </tr>
-        {% for mov in movs %}
+        {% if movs %}
+            {% for mov in movs %}
         <tr>
             <td>{{mov.fecha}}</td>
             <td>{{mov.concepto}}</td>
@@ -37,8 +38,13 @@
             <td class="numero">{{mov.cantidad}}</td>
         </tr>
         {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="4" class="lista-vacia">No hay movimientos</td>                
+            </tr>
+            {% endif %}
         </table>
     </main>
-    <footer class="pie_de_página">BootCamp 2022</footer>
+<footer class="pie_de_pagina">BootCamp 2022</footer>
 </body>
 </html>

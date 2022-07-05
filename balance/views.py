@@ -8,7 +8,7 @@ from . models import ListaMovimientos
 def home():
     movimientos = ListaMovimientos()
     movimientos.leer_archivo()
-    return render_template("inicio.html", movs=movimientos.lista_movimientos)
+    return render_template("inicio.html", movs=movimientos.movimientos)
 
 @app.route("/nuevo")
 def nuevo():
