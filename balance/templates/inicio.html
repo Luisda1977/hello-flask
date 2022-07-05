@@ -16,23 +16,24 @@
         Inicio | Nuevo
     </nav>
 
-    <table class="lista">
-       <tr>
-        <th>Fecha</th>
-        <th>Concepto</th>
-        <th>Tipo</th>
-        <th>Cantidad</th>
-       </tr>
-       {% for mov in movs %}
-       <tr>
-        <td>{{mov.fecha}}</td>
-        <td>{{mov.concepto}}</td>
-        <td>{{mov.tipo}}</td>
-        <td>{{mov.cantidad}}</td>
-       </tr>
-       {% endfor %}
-    </table>
-    <footer class="pie_de_página">BootCamp 2022</footer>
-
+    <main>
+        <table class="paper">
+        <tr>
+            <th class="titulo-tabla">Fecha</th>
+            <th class="titulo-tabla">Concepto</th>
+            <th class="titulo-tabla">Tipo</th>
+            <th class="titulo-tabla">Cantidad</th>
+        </tr>
+        {% for mov in movs %}
+        <tr>
+            <td>{{mov.fecha}}</td>
+            <td>{{mov.concepto}}</td>
+            <td>{{mov.tipo}}</td>
+            <td>{{mov.cantidad}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+        <footer class="pie_de_página">BootCamp 2022</footer>
+    </main>
 </body>
 </html>
