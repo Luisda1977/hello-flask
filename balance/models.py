@@ -7,13 +7,19 @@ Un movimiento debe tener:
 """
 
 import csv
-from datetime import datetime
+from datetime import date, datetime
 
 from . import FICHERO
 
 class Movimiento:
     def __init__(self, fecha, concepto, tipo, cantidad):
-        self.fecha = fecha
+        self.errores = []
+        try:
+            self.fecha = date.fromisoformat(fecha)
+        except ValueError:
+            self.fecha = None
+            self.errores.append("El formato de la fecha no es válido")  
+        
         self.concepto = concepto
         self.tipo = tipo
         self.cantidad = cantidad
