@@ -28,12 +28,17 @@
         <tr>
             <td>{{mov.fecha}}</td>
             <td>{{mov.concepto}}</td>
-            <td>{{mov.tipo}}</td>
+            <td>{% if mov.tipo == "I" %}
+                Ingreso
+                {% else %}
+                Gasto
+                {% endif %}
+            </td>
             <td class="numero">{{mov.cantidad}}</td>
         </tr>
         {% endfor %}
         </table>
-        <footer class="pie_de_página">BootCamp 2022</footer>
     </main>
+    <footer class="pie_de_página">BootCamp 2022</footer>
 </body>
 </html>

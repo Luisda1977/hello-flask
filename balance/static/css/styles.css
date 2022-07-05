@@ -37,3 +37,9 @@ table.paper {
 .numero {
     text-align: right;
 }
+
+.pie_de_pagina {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: #b8174c solid 1px;
+}
