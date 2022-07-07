@@ -12,17 +12,25 @@ from datetime import date, datetime
 from . import FICHERO
 
 class Movimiento:
-    def __init__(self, fecha, concepto, tipo, cantidad):
+    def __init__(self, dicc_datos):
         self.errores = []
         try:
-            self.fecha = date.fromisoformat(fecha)
+            self.fecha = date.fromisoformat(dicc_datos["fecha"])
         except ValueError:
             self.fecha = None
             self.errores.append("El formato de la fecha no es válido")  
         
-        self.concepto = concepto
-        self.tipo = tipo
-        self.cantidad = cantidad
+        self.concepto = dicc_datos["concepto"]
+        self.tipo = dicc_datos["tipo"]
+        self.cantidad = dicc_datos["cantidad"]
+
+    def __str__(self):
+        return "fecha: {} concepto: {} tipo: {} cantidad: {}".format(
+            self.fecha,
+            self.concepto,
+            self.tipo,
+            self.cantidad
+        )
 
 
 class ListaMovimientos:
@@ -34,10 +42,8 @@ class ListaMovimientos:
             reader = csv.DictReader(fichero)
             for linea in reader:
                 #self.lista_movimientos.append(linea) no nos vale
-                mov = Movimiento (
-                    linea["fecha"], linea["concepto"],
-                    linea["tipo"], linea["cantidad"]
-                    )
+                mov = Movimiento (linea)
+                
                 self.movimientos.append(mov)
 
 
