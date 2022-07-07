@@ -6,13 +6,26 @@
 
 
 {% block page_title %}
-Listado de movimientos
+Agregar movimiento
 {% endblock %}
 
 
 {% block contenido %}
 {{super()}}
-<div class="panel">
-    <p>Hola, soy el formulario para crear un movimiento</p>
-</div>
+
+<!--
+    CRUD:Create, Read, Update, Delete
+    GET: read
+    POST: create, delete
+    PUT: update
+-->
+<form action="/nuevo" method="post"></form>
+    <div class="campo-formulario">
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" name="">
+    </div>
+    <div class="campo-formulario">
+        <label for="hora">Hora</label>
+        <input type="time" id="hora" name="">
+    </div>
 {% endblock %}
