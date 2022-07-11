@@ -30,19 +30,19 @@ Agregar movimiento
     </div>
     <div class="campo-formulario">
         <label for="concepto">Concepto</label>
-        <input type="text" id="concepto" name="concepto">
+        <input type="text" id="concepto" name="concepto" required>
     </div>
     <div class="campo-formulario">
-        <input type="radio" id="ingreso" name="tipo" value="I">
+        <input type="radio" name="tipo" id="ingreso" value="I">
         <label for="ingreso" class="radio-label">Ingreso</label>
-        <input type="radio" id="gasto" name="tipo" value="G">
+        <input type="radio" name="tipo" id="gasto" value="G" checked>
         <label for="gasto" class="radio-label">Gasto</label>
     </div>
     <div class="campo-formulario">
         <label for="cantidad">Cantidad</label>
-        <input type="number" id="cantidad" name="cantidad">
+        <input type="number" id="cantidad" name="cantidad" required>
     </div>
     <div class="acciones">
         <button type="submit" class="red-button">Click</button>
     </div>
-{% endblock %}
+{% endblock %}  
